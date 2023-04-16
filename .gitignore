@@ -1,2 +1,7 @@
 data/raw_data
 data/processed_images
+runs/
+test.ipynb
+__pycache__/
+train_data.npy
+test_data.npy
