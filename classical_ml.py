@@ -4,6 +4,7 @@ from sklearn.decomposition import PCA
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 import argparse
+import timeit
 
 def load_data():
     train_data = np.load("train_data.npy")
@@ -54,4 +55,7 @@ if __name__ == "__main__":
     parser.add_argument("-n", "--n_components", type=float, default=0.95, help="Number of components to keep")
 
     args = parser.parse_args()
+
+    start = timeit.default_timer()
     train(args.model_type, args.use_pca, args.n_components)
+    print(f"Time taken: {timeit.default_timer() - start} seconds")

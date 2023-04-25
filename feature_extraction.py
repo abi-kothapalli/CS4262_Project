@@ -3,13 +3,14 @@ from torch import nn
 import torchvision
 import numpy as np
 from tqdm import tqdm
+import timeit
 
 from data_utils import get_dataloaders
 
-DEVICE = "cuda:1"
-AVAILABLE_DEVICES = [1, 2, 3]
-DEFAULT_EPOCHS = 100
+start = timeit.default_timer()
 
+DEVICE = "cuda:1"
+AVAILABLE_DEVICES = [1]
 
 class Identity(nn.Module):
     def __init__(self):
@@ -42,3 +43,5 @@ with torch.inference_mode():
 
             np.save(f"{name}_data.npy", final_matrix.cpu().numpy())
 
+
+print(f"Time taken: {timeit.default_timer() - start} seconds")

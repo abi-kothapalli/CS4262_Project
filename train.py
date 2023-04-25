@@ -13,7 +13,7 @@ from data_utils import get_dataloaders
 
 DEVICE = "cuda:1"
 AVAILABLE_DEVICES = [1, 2, 3]
-DEFAULT_EPOCHS = 100
+DEFAULT_EPOCHS = 30
 
 
 def get_model(name = "resnet"):
